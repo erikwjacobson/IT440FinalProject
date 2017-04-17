@@ -2,6 +2,10 @@
 
 ## IT440/540 Final Project – Cinema Database
 
+### Data Model
+
+![Data Model Image](https://i.gyazo.com/984611cf7638dcf7c5ce71ed7dcd240b.png)
+
 DDL & DML
 1. Implement the Cinema database and create the database in SQL Server. Don’t forget to implement the primary and foreign keys.
 2. Add records to each table. Make sure that each table has at least 5 records and the table Showing, Ticket and Order need to have at least 15 records. Write the insert statements, execute them and make sure all data is entered correctly.
