@@ -140,12 +140,16 @@ INSERT INTO Movie VALUES
 INSERT INTO Movie VALUES
 (
 	'Star Wars: The Last Jedi',
-	'2017-12-15'
+	'2017-12-15',
+	NULL,
+	NULL
 );
 INSERT INTO Movie VALUES
 (
 	'Cars 3',
-	'2017-06-16'
+	'2017-06-16',
+	NULL,
+	NULL
 );
 INSERT INTO Movie VALUES
 (
@@ -191,3 +195,113 @@ INSERT INTO Genre VALUES ('Thriller');
 INSERT INTO Genre VALUES ('Sci-Fi');
 INSERT INTO Genre VALUES ('Western');
 INSERT INTO Genre VALUES ('Romantic Comedy');
+
+/* MovieGenre INSERTS */
+INSERT INTO MovieGenre VALUES (1,14);
+INSERT INTO MovieGenre VALUES (1,17);
+INSERT INTO MovieGenre VALUES (2,19);
+INSERT INTO MovieGenre VALUES (2,14);
+INSERT INTO MovieGenre VALUES (3,8);
+INSERT INTO MovieGenre VALUES (4,18);
+INSERT INTO MovieGenre VALUES (4,14);
+INSERT INTO MovieGenre VALUES (5,6);
+INSERT INTO MovieGenre VALUES (5,3);
+INSERT INTO MovieGenre VALUES (6,1);
+INSERT INTO MovieGenre VALUES (6,2);
+INSERT INTO MovieGenre VALUES (6,19);
+INSERT INTO MovieGenre VALUES (7,3);
+INSERT INTO MovieGenre VALUES (7,6);
+INSERT INTO MovieGenre VALUES (8,14);
+INSERT INTO MovieGenre VALUES (9,2);
+INSERT INTO MovieGenre VALUES (9,1);
+INSERT INTO MovieGenre VALUES (10,2);
+INSERT INTO MovieGenre VALUES (10,19);
+
+/* Auditorium INSERTS */
+INSERT INTO Auditorium VALUES ('Orpheum Theater',75);
+INSERT INTO Auditorium VALUES ('AMC Theater',65);
+INSERT INTO Auditorium VALUES ('Cinemark',60);
+INSERT INTO Auditorium VALUES ('Grand Cinema',100);
+INSERT INTO Auditorium VALUES ('Mankato Movies',40);
+
+/* Category INSERTS */
+/* Ticket INSERTS */
+/* Customer INSERTS */
+INSERT INTO Customer VALUES
+(
+	'Erik',
+	'Jacobson',
+	'M',
+	'1997-03-06',
+	'erik@example.com'
+);
+INSERT INTO Customer VALUES 
+(
+	'Chas',
+	'Bassett',
+	'M',
+	'1995-11-14', /* I just guessed */
+	'chas@example.com'
+);
+INSERT INTO Customer VALUES 
+(
+	'Rick',
+	'Sanchez',
+	'M',
+	'1957-04-19',
+	'rick@example.com'
+);
+INSERT INTO Customer VALUES 
+(
+	'Adam',
+	'Smith',
+	'M',
+	'1984-12-11',
+	'adam@example.com'
+);
+INSERT INTO Customer VALUES 
+(
+	'Mary',
+	'Smith',
+	'F',
+	'1988-04-12',
+	'mary@example.com'
+);
+INSERT INTO Customer VALUES 
+(
+	'Laurel',
+	'Jacobson',
+	'F',
+	'1992-04-17',
+	'laurel@example.com'
+);
+
+/* Order INSERTS */
+SELECT * FROM Customer;
+INSERT INTO [Order] VALUES (1,'2017-03-06');
+INSERT INTO [Order] VALUES (1,'2017-02-04');
+INSERT INTO [Order] VALUES (1,'2015-11-19');
+INSERT INTO [Order] VALUES (1,'2015-12-21');
+INSERT INTO [Order] VALUES (1,'2016-01-22');
+INSERT INTO [Order] VALUES (6,'2015-05-06');
+INSERT INTO [Order] VALUES (6,'2013-04-06');
+INSERT INTO [Order] VALUES (6,'2014-02-06');
+INSERT INTO [Order] VALUES (2,'2017-02-06');
+INSERT INTO [Order] VALUES (2,'2017-03-04');
+INSERT INTO [Order] VALUES (2,'2017-04-12');
+INSERT INTO [Order] VALUES (3,'2017-03-06');
+INSERT INTO [Order] VALUES (3,'2017-02-04');
+INSERT INTO [Order] VALUES (3,'2016-08-14');
+INSERT INTO [Order] VALUES (3,'2001-03-10');
+INSERT INTO [Order] VALUES (3,'2004-07-14');
+INSERT INTO [Order] VALUES (3,'2000-05-14');
+INSERT INTO [Order] VALUES (3,'1983-07-11');
+INSERT INTO [Order] VALUES (4,'1999-03-14');
+INSERT INTO [Order] VALUES (5,'2000-07-14');
+INSERT INTO [Order] VALUES (5,'2000-08-31');
+INSERT INTO [Order] VALUES (5,'2016-07-07');
+INSERT INTO [Order] VALUES (5,'2013-02-12');
+
+/* OrderDetail INSERTS */
+
+/* Showing INSERTS */
