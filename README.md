@@ -26,7 +26,7 @@ Write procedures, triggers or functions to handle the constraints listed below. 
     - Write code to test your logic for each constraint to show that your logic is working correctly.
 
 ### Queries
-- ~~Return all movies that have not sold any tickets.~~
+- ~~Return all movies that have not sold any tickets. ~~
 - Return the total sales per movie per year.
 - ~~Return the number of available seats for each movie per showing date.~~
 - Return the number of tickets sold per year per category.
