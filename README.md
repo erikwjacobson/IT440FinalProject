@@ -9,7 +9,7 @@
 DDL & DML
 
 1. ~~Implement the Cinema database and create the database in SQL Server. Don’t forget to implement the primary and foreign keys.~~
-2. Add records to each table. Make sure that each table has at least 5 records and the table Showing, Ticket and Order need to have at least 15 records. Write the insert statements, execute them and make sure all data is entered correctly.
+2. ~~Add records to each table. Make sure that each table has at least 5 records and the table Showing, Ticket and Order need to have at least 15 records. Write the insert statements, execute them and make sure all data is entered correctly.~~
  
 ### Extra Constraints 
 Write procedures, triggers or functions to handle the constraints listed below. It does not matter how you solve the problem but I want you to write at least 2 triggers and 2 stored procedures. For every procedure, trigger or function that you write make sure you use correct error handling with TRY/CATCH and implement the transaction logic like we discussed in class. 
