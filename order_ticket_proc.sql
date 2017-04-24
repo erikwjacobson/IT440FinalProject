@@ -1,8 +1,6 @@
 /* 
 The following file covers the following constraints:
 	'Every Order needs to have at least one OrderDetail record.'
-	'A Customer needs to be older than 13 to order a ticket.'
-	'A Customer that is younger than 17 is not allowed to purchase a ticket for an R-rated movie.'
 */
 
 /* Stored Procedure */
@@ -25,7 +23,11 @@ BEGIN
 	END
 	BEGIN TRY
 		BEGIN
-		 -- Do whatever!!!!
+
+		/* Order Insert */ 
+			INSERT INTO [Order] VALUES(@customerID, @date);
+		/* OrderDetail Insert */
+			INSERT INTO [OrderDetail] VALUES(@@IDENTITY, @ticketID, @numberOfTickets);
 
 		   IF @count = 0
 		      COMMIT TRANSACTION;
