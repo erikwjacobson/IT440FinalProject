@@ -1,9 +1,13 @@
 use Cinema;
 
-SELECT DATEPART(year, s.Date) as Year, c.Name, count(*) as Tickets
+SELECT c.Name, Year, SUM(No_of_Tickets) as No_of_Tickets
 FROM Ticket t
-	JOIN Showing s
-		ON t.ShowingID = s.ShowingID
-	JOIN  Category c
+	JOIN (SELECT od.TicketID, DATEPART(year, o.OrderDate) as Year, SUM(od.No_of_Tickets) as No_of_Tickets
+			FROM OrderDetail od
+				JOIN [Order] o
+					ON od.OrderID = o.OrderID
+			GROUP BY od.TicketID, DATEPART(year, o.OrderDate)) od
+		ON t.TicketID = od.TicketID
+	JOIN Category c
 		ON c.CategoryID = t.CategoryID
-GROUP BY DATEPART(year, s.Date), c.Name;
+GROUP BY Year, c.Name;
