@@ -1,5 +1,4 @@
 use Cinema;
-use Music;
 
 SELECT m.MovieID, m.Title
 FROM Movie m
