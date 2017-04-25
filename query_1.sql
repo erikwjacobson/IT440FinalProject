@@ -1,7 +1,13 @@
-SELECT Title, ReleaseDate, Runtime
+use Cinema;
+
+SELECT m.MovieID, m.Title
 FROM Movie m
-WHERE (SELECT s.MovieID, count(*)
-	   FROM Showing s
-	       JOIN Ticket t
-	           ON s.ShowingID = t.ShowingID
-       WHERE s.MovieID = m.MovieID) = 0;
+WHERE (SELECT SUM(t.No_of_Tickets) as No_of_Tickets 
+	FROM Showing s
+		JOIN (SELECT SUM(od.No_of_Tickets) as No_of_Tickets, t.ShowingID
+				FROM Ticket t
+					JOIN OrderDetail od
+						ON t.TicketID = od.TicketID
+				GROUP BY t.ShowingID) t
+			ON t.ShowingID = s.ShowingID
+	WHERE s.MovieID = m.MovieID) <= 0;
