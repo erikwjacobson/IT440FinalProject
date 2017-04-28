@@ -32,7 +32,7 @@ Write procedures, triggers or functions to handle the constraints listed below. 
 - ~~Return the number of tickets sold per year per category.~~
 - ~~Return all the movies that have had sold out showings.~~
 - ~~Return per category the number of moviegoers.~~
-- What’s the average age of the moviegoers per movie.
+- ~~What’s the average age of the moviegoers per movie.~~
 
 ---
 Created by:
