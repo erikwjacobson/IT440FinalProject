@@ -48,10 +48,15 @@ BEGIN
 END;
 
 /* Test Execution */
- BEGIN TRANSACTION;
- 	/* Fail */
- COMMIT TRANSACTION;
+BEGIN TRANSACTION;
+	DECLARE @varDate1 DATE;
+	SET @varDate1 = GETDATE();
+	EXEC orderTicket @numberOfTickets = 3, @customerID = 1, @date = @varDate1, @ticketID = 99; /* Not a real ticket number */
+COMMIT TRANSACTION;
 /***********************/
- BEGIN TRANSACTION;
- 	/* Pass */
- COMMIT TRANSACTION;
+BEGIN TRANSACTION;
+	/* Pass */
+	DECLARE @varDate2 DATE;
+	SET @varDate2 = GETDATE();
+	EXEC orderTicket @numberOfTickets = 3, @customerID = 1, @date = @varDate2, @ticketID = 3;
+COMMIT TRANSACTION;
