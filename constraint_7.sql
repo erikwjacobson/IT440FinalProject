@@ -1,10 +1,29 @@
-use Cinema
+/* 
+	The following constraints are being satisfied with this trigger:
+		'Only one movie can be displayed at a time in an auditorium.'
+		'If a customer has ordered a ticket it is not allowed to change any information for that showing.'
+		'A movie needs to be released before it can be shown to the customers.'
+*/
+
+USE Cinema
 GO
 
 CREATE TRIGGER assertValidShowing on Showing
 INSTEAD OF INSERT, UPDATE
 AS 
 	BEGIN
+		DECLARE @showingID INT; 
+		SET @showingID = (SELECT ShowingID from INSERTED);
+		BEGIN
+			IF @showingID IN (SELECT S.ShowingID 
+							FROM Showing S 
+							JOIN Ticket T
+							ON S.ShowingID = T.ShowingID
+							JOIN OrderDetail OD
+							ON T.TicketID = OD.TicketID)
+				RAISERROR('You cannot update a showing that has tickets already bought',13,13);
+		END
+		
 		DECLARE @releaseDate DATE;
 
 		SELECT @releaseDate = ReleaseDate FROM Movie WHERE MovieID IN (SELECT MovieID FROM inserted);
