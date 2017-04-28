@@ -82,6 +82,7 @@ CREATE TABLE Ticket
 	ShowingID INT NOT NULL FOREIGN KEY REFERENCES Showing(ShowingID),
 	CategoryID INT NOT NULL FOREIGN KEY REFERENCES Category(CategoryID),
 	Price MONEY,
+	/* 'Ticket: the combination of ShowingID and CategoryID needs to be unique.' */
 	CONSTRAINT [UQ_Keys] UNIQUE NONCLUSTERED
 	(
 		[ShowingID],[CategoryID]
