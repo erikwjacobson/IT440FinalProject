@@ -367,6 +367,23 @@ INSERT INTO Customer VALUES
 	'1992-04-17',
 	'laurel@example.com'
 );
+INSERT INTO Customer VALUES
+(
+	'Little',
+	'Timmy',
+	'M',
+	DATEADD(year, -12, GETDATE()),
+	'littletim@example.com'
+);
+INSERT INTO Customer VALUES
+(
+	'Medium',
+	'Timmy',
+	'M',
+	DATEADD(year, -16, GETDATE()),
+	'medtim@example.com'
+);
+
 
 /* Order INSERTS */
 SELECT * FROM Customer;
