@@ -31,7 +31,7 @@ BEGIN
 							                 FROM Showing S
 											 WHERE S.ShowingID = (SELECT ShowingID
 																  FROM Ticket T
-																  WHERE T.TicketID = 1)));
+																  WHERE T.TicketID = @ticketID)));
 
 	/* LOGIC FOR 'A Customer needs to be older than 13 to order a ticket.' */
 	BEGIN
@@ -62,4 +62,11 @@ BEGIN TRANSACTION;
 	SET @varDate2 = GETDATE();
 	EXEC orderTicket @numberOfTickets = 3, @customerID = 7, @date = @varDate2, @ticketID = 3;
 	/* Customer is only 12 years of age */
+COMMIT TRANSACTION;
+SELECT * FROM Movie where MovieID = 1;
+BEGIN TRANSACTION;
+	DECLARE @varDate2 DATE;
+	SET @varDate2 = GETDATE();
+	EXEC orderTicket @numberOfTickets = 3, @customerID = 8, @date = @varDate2, @ticketID = 8;
+	/* Customer is only 16 years of age */
 COMMIT TRANSACTION;
