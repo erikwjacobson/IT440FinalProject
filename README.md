@@ -16,7 +16,7 @@ Write procedures, triggers or functions to handle the constraints listed below. 
 - ~~Only ‘M’ or ‘F’ can be entered as a gender for a customer.~~
 - ~~Every Order needs to have at least one OrderDetail record.~~
 - ~~Ticket: the combination of ShowingID and CategoryID needs to be unique.~~
-- Only one movie can be displayed at a time in an auditorium.
+- ~~Only one movie can be displayed at a time in an auditorium.~~
 - It is not allowed sell more tickets than there are seats available for a showing. 
 - If a customer has ordered a ticket it is not allowed to change any information for that showing. 
 - ~~A movie needs to be released before it can be shown to the customers.~~
